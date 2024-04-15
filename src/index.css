@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-black: #000000;
+  --color-grey-dark: #303030;
+  --color-grey-light: #999999;
+  --color-white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -17,5 +24,6 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-style: normal;
-  overflow-x: hidden;
+  overflow: hidden;
+  color: var(--color-white);
 }

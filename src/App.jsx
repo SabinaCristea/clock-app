@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import Quote from "./components/Quote";
+import AppLayout from "./components/AppLayout";
 
 function App() {
   const queryClient = new QueryClient();
@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Quote />
+        <AppLayout />
       </QueryClientProvider>
     </>
   );
