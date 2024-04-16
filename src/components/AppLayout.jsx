@@ -1,11 +1,15 @@
+import useGreetingIconImage from "../hooks/useGreetingIconImage";
 import Quote from "./Quote";
 import TimeAndPlace from "./TimeAndPlace";
 
 function AppLayout() {
+  const { image } = useGreetingIconImage();
+
   return (
     <div className="relative ">
       <img
-        src="../assets/mobile/bg-image-daytime.jpg"
+        src={`../assets/mobile/bg-image-${image}time.jpg`}
+        // src={`../assets/mobile/bg-image-nighttime.jpg`}
         alt="Daytime phone"
         className="object-cover	absolute z-[-10] w-[100%] h-auto "
       />

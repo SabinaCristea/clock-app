@@ -1,11 +1,15 @@
 import useTime from "../hooks/useTime";
 import useTimeAndLocation from "../hooks/useIPLocation";
-import useGreeting from "../hooks/useGreeting";
+import useGreetingIconImage from "../hooks/useGreetingIconImage";
 
 function TimeAndPlace() {
   const time = useTime();
   const { timeAndLocation, isLoading, isError } = useTimeAndLocation();
-  const { greeting, icon } = useGreeting();
+  const { greeting, icon } = useGreetingIconImage();
+
+  const timeAbbr = timeAndLocation?.time?.abbr;
+  const city = timeAndLocation?.location?.city;
+  const country = timeAndLocation?.location?.country;
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -14,10 +18,6 @@ function TimeAndPlace() {
   if (isError) {
     return <p>Error fetching quote data</p>;
   }
-
-  const timeAbbr = timeAndLocation?.time?.abbr;
-  const city = timeAndLocation?.location?.city;
-  const country = timeAndLocation?.location?.country;
 
   return (
     <div className="flex flex-col gap-[1.6rem] h-[18.5rem] mt-[14rem]">
