@@ -6,6 +6,7 @@ import Quote from "./Quote";
 import TimeAndPlace from "./TimeAndPlace";
 
 function AppLayout() {
+  const mainContentRef = useRef(null);
   const extendedInfoRef = useRef(null);
   const [showExpandedInfo, setShowExpandedInfo] = useState(false);
   const { image } = useGreetingIconImage();
@@ -17,6 +18,8 @@ function AppLayout() {
   useEffect(() => {
     if (showExpandedInfo) {
       extendedInfoRef.current.scrollIntoView({ behavior: "smooth" });
+    } else {
+      mainContentRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [showExpandedInfo]);
 
@@ -28,15 +31,19 @@ function AppLayout() {
         className="object-cover	fixed z-[-10] w-[100%] h-[100vh]"
       />
       <div className="fixed w-[100%] h-[100vh] bg-black opacity-[0.4] z-[-1]"></div>
-      <div className="px-[2.6rem] pt-[3.2rem]">
+      <div className="px-[2.6rem] pt-[3.2rem]" ref={mainContentRef}>
         <Quote />
         <TimeAndPlace />
         <Button
           onClick={handleExpandedInfo}
           arrowDirection={showExpandedInfo ? "up" : "down"}
+          btnText={showExpandedInfo ? "Less" : "More"}
         />
       </div>
-      <div ref={extendedInfoRef}>{showExpandedInfo && <ExtendedInfo />}</div>
+      <div ref={extendedInfoRef}>
+        {/* {showExpandedInfo && <ExtendedInfo />} */}
+        <ExtendedInfo className={!showExpandedInfo ? "opacity-0" : ""} />
+      </div>
     </div>
   );
 }

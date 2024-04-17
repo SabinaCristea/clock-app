@@ -1,7 +1,8 @@
 import useTimeAndLocation from "../hooks/useIPLocation";
 import ExtendedInfoItem from "./ExtendedInfoItem";
+import PropTypes from "prop-types";
 
-function ExtendedInfo() {
+function ExtendedInfo({ className }) {
   const { timeAndLocation, isLoading, isError } = useTimeAndLocation();
   const timezone = timeAndLocation?.time?.timezone;
   const yearDay = timeAndLocation?.time?.yearDay;
@@ -18,9 +19,9 @@ function ExtendedInfo() {
 
   return (
     <div
-      className="grid gap-y-[1.6rem] py-[4.8rem] px-[2.6rem] "
+      className={`grid gap-y-[1.6rem] py-[4.8rem] px-[2.6rem] ${className} transition-all duration-[0.4s]`}
       style={{
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backgroundColor: "rgba(0, 0, 0, 0.75)",
         backdropFilter: "blur(2rem)",
         // add conditional white bg and text
       }}
@@ -32,5 +33,9 @@ function ExtendedInfo() {
     </div>
   );
 }
+
+ExtendedInfo.propTypes = {
+  className: PropTypes.string.isRequired,
+};
 
 export default ExtendedInfo;
