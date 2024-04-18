@@ -41,7 +41,7 @@ function Quote() {
   }
 
   return (
-    <div className="flex items-start justify-between h-[20rem]">
+    <div className="flex items-start justify-between ">
       <div className="pr-[1.6rem]">
         <blockquote className="text-[1.2rem] leading-[2.2rem] mb-[0.8rem]">
           {`"${quoteData.content}"`}

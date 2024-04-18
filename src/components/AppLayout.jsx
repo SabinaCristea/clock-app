@@ -31,17 +31,21 @@ function AppLayout() {
         className="object-cover	fixed z-[-10] w-[100%] h-[100vh]"
       />
       <div className="fixed w-[100%] h-[100vh] bg-black opacity-[0.4] z-[-1]"></div>
-      <div className="px-[2.6rem] pt-[3.2rem]" ref={mainContentRef}>
+      <div
+        className="px-[2.6rem] pt-[3.2rem] flex flex-col h-[100vh] justify-between"
+        ref={mainContentRef}
+      >
         <Quote />
-        <TimeAndPlace />
-        <Button
-          onClick={handleExpandedInfo}
-          arrowDirection={showExpandedInfo ? "up" : "down"}
-          btnText={showExpandedInfo ? "Less" : "More"}
-        />
+        <div className="">
+          <TimeAndPlace />
+          <Button
+            onClick={handleExpandedInfo}
+            arrowDirection={showExpandedInfo ? "up" : "down"}
+            btnText={showExpandedInfo ? "Less" : "More"}
+          />
+        </div>
       </div>
       <div ref={extendedInfoRef}>
-        {/* {showExpandedInfo && <ExtendedInfo />} */}
         <ExtendedInfo className={!showExpandedInfo ? "opacity-0" : ""} />
       </div>
     </div>

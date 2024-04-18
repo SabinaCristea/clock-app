@@ -20,7 +20,7 @@ function TimeAndPlace() {
   }
 
   return (
-    <div className="flex flex-col gap-[1.6rem] h-[18.5rem] mt-[12rem] mb-[4.8rem]">
+    <div className="flex flex-col gap-[1.6rem] h-[18.5rem] mb-[4.8rem]">
       <div className="greeting flex gap-[1.6rem]">
         <img src={`../assets/desktop/icon-${icon}.svg`} alt={`Icon ${icon}`} />
         <p className="text-[1.5rem] leading-[2.5rem] uppercase tracking-[0.3rem]">

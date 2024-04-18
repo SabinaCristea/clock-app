@@ -18,6 +18,8 @@ export default function useGreetingIconImage() {
       newImage = "day";
     } else if (currentHour >= 12 && currentHour < 18) {
       newGreeting = "Good afternoon";
+      newIcon = "sun";
+      newImage = "day";
     } else {
       newGreeting = "Good evening";
       newIcon = "moon";
