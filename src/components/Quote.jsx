@@ -41,12 +41,12 @@ function Quote() {
   }
 
   return (
-    <div className="flex items-start justify-between ">
+    <div className="flex items-start justify-between md:w-[57.3rem]">
       <div className="pr-[1.6rem]">
-        <blockquote className="text-[1.2rem] leading-[2.2rem] mb-[0.8rem]">
+        <blockquote className="text-[1.2rem] leading-[2.2rem] mb-[0.8rem] md:text-[1.8rem] md:leading-[2.8rem] md:mb-[1.3rem]">
           {`"${quoteData.content}"`}
         </blockquote>
-        <p className="font-bold text-[1.2rem] leading-[2.2rem]">
+        <p className="font-bold text-[1.2rem] leading-[2.2rem] md:text-[1.8rem] md:leading-[2.8rem]">
           {quoteData.author}
         </p>
       </div>

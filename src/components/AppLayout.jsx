@@ -28,15 +28,20 @@ function AppLayout() {
       <img
         src={`../assets/mobile/bg-image-${image}time.jpg`}
         alt="Daytime phone"
-        className="object-cover	fixed z-[-10] w-[100%] h-[100vh]"
+        className="object-cover	fixed z-[-10] w-[100%] h-[100vh] md:hidden"
+      />
+      <img
+        src={`../assets/tablet/bg-image-${image}time.jpg`}
+        alt="Daytime phone"
+        className="hidden md:block object-cover fixed z-[-10] w-[100%] h-[100vh]"
       />
       <div className="fixed w-[100%] h-[100vh] bg-black opacity-[0.4] z-[-1]"></div>
       <div
-        className="px-[2.6rem] pt-[3.2rem] flex flex-col h-[96vh] justify-between overflow-y-auto"
+        className="px-[2.6rem] pt-[3.2rem] flex flex-col h-[96vh] justify-between overflow-y-auto md:px-[6.4rem] md:pt-[8rem]"
         ref={mainContentRef}
       >
         <Quote />
-        <div className="">
+        <div>
           <TimeAndPlace />
           <Button
             onClick={handleExpandedInfo}
@@ -46,7 +51,10 @@ function AppLayout() {
         </div>
       </div>
       <div ref={extendedInfoRef}>
-        <ExtendedInfo className={!showExpandedInfo ? "opacity-0" : ""} />
+        <ExtendedInfo
+          className={`${!showExpandedInfo ? "opacity-0" : ""} 
+          }`}
+        />
       </div>
     </div>
   );

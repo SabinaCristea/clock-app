@@ -20,23 +20,25 @@ function TimeAndPlace() {
   }
 
   return (
-    <div className="flex flex-col gap-[1.6rem] h-[18.5rem] mb-[4.8rem]">
+    <div className="flex flex-col gap-[1.6rem] h-[18.5rem] mb-[4.8rem] md:gap-0 md:h-[23.1rem] md:mb-[8rem]">
       <div className="greeting flex gap-[1.6rem]">
         <img src={`../assets/desktop/icon-${icon}.svg`} alt={`Icon ${icon}`} />
-        <p className="text-[1.5rem] leading-[2.5rem] uppercase tracking-[0.3rem]">
+        <p className="text-[1.5rem] leading-[2.5rem] uppercase tracking-[0.3rem] md:text-[1.8rem] md:leading-[2.8rem]  md:tracking-[0.36rem]">
           {greeting}
+          <span className="hidden md:inline">, it`s currently</span>
         </p>
       </div>
+
       <div className="flex items-end">
-        <time className="text-[10rem] font-bold tracking-[-0.25rem] leading-[10rem]">
+        <time className="text-[10rem] font-bold tracking-[-0.25rem] leading-[10rem] md:text-[17.5rem] md:tracking-[-0.437rem] md:leading-[17.5rem]">
           {time}
         </time>
 
-        <div className="text-[1.5rem] font-light leading-[2.8rem] uppercase pb-[0.5rem] pl-[0.5rem]">
+        <div className="text-[1.5rem] font-light leading-[2.8rem] uppercase pb-[0.5rem] pl-[0.5rem] md:text-[3.2rem] md:pb-[2.4rem] md:pl-[1.1rem]">
           {timeAbbr}
         </div>
       </div>
-      <div className="uppercase text-[1.5rem] tracking-[0.3rem] leading-[2.8rem] font-bold">
+      <div className="uppercase text-[1.5rem] tracking-[0.3rem] leading-[2.8rem] font-bold md:text-[1.8rem] md:tracking-[0.36rem]">
         {/* In {city}, {country} */}
         In city, country
       </div>
