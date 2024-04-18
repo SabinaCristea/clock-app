@@ -32,7 +32,7 @@ function AppLayout() {
       />
       <div className="fixed w-[100%] h-[100vh] bg-black opacity-[0.4] z-[-1]"></div>
       <div
-        className="px-[2.6rem] pt-[3.2rem] flex flex-col h-[100vh] justify-between"
+        className="px-[2.6rem] pt-[3.2rem] flex flex-col h-screen justify-between overflow-y-auto"
         ref={mainContentRef}
       >
         <Quote />
