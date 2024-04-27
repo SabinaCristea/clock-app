@@ -1,7 +1,6 @@
 import useTime from "../hooks/useTime";
 import useTimeAndLocation from "../hooks/useIPLocation";
 import useGreetingIconImage from "../hooks/useGreetingIconImage";
-import React from "react";
 
 function TimeAndPlace() {
   const time = useTime();
