@@ -3,7 +3,7 @@ import useTimeAndLocation from "../hooks/useIPLocation";
 import useGreetingIconImage from "../hooks/useGreetingIconImage";
 import React from "react";
 
-const TimeAndPlace = React.memo(function TimeAndPlace() {
+function TimeAndPlace() {
   const time = useTime();
   const { timeAndLocation, isLoading, isError } = useTimeAndLocation();
   const { greeting, icon } = useGreetingIconImage();
@@ -48,6 +48,6 @@ const TimeAndPlace = React.memo(function TimeAndPlace() {
       </div>
     </div>
   );
-});
+}
 
 export default TimeAndPlace;
