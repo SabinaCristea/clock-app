@@ -23,7 +23,7 @@ function ExtendedInfo({ className }) {
 
   return (
     <div
-      className={`grid gap-y-[1.6rem] py-[4.8rem] px-[2.6rem] ${className} transition-all duration-[0.4s] md:grid-cols-2 md:gap-y-[4.9rem] md:gap-x-[8.1rem] md:py-[11rem] md:pl-[6.4rem] 
+      className={`grid gap-y-[1.6rem] py-[4.8rem] px-[2.6rem] ${className} transition-all duration-[0.4s] md:grid-cols-2 md:gap-y-[4.9rem] md:gap-x-[9rem] md:pt-[11rem] md:pb-[9rem] md:pl-[6.4rem] lg:gap-y-[4.2rem] lg:gap-x-[20.3rem] lg:py-[7.4rem] lg:pl-[16.5rem] relative 
   
       `}
       style={{
@@ -54,6 +54,7 @@ function ExtendedInfo({ className }) {
         infoType="Week number"
         className="md:order-4"
       />
+      <div className="hidden sp:block sp:absolute sp:w-[1px] sp:h-[25.2rem] sp:bg-white opacity-[0.25] top-[7.4rem] left-[50%]"></div>
     </div>
   );
 }
@@ -63,3 +64,7 @@ ExtendedInfo.propTypes = {
 };
 
 export default ExtendedInfo;
+
+// flex-shrink: 0;
+// opacity: 0.25;
+// background: #FFF;
