@@ -64,7 +64,3 @@ ExtendedInfo.propTypes = {
 };
 
 export default ExtendedInfo;
-
-// flex-shrink: 0;
-// opacity: 0.25;
-// background: #FFF;

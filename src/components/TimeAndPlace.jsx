@@ -43,7 +43,6 @@ function TimeAndPlace() {
       </div>
       <div className="uppercase text-[1.5rem] tracking-[0.3rem] leading-[2.8rem] font-bold md:text-[1.8rem] md:tracking-[0.36rem] lg:text-[2.4rem] lg:tracking-[0.48rem]">
         In {city}, {country}
-        {/* In city, country */}
       </div>
     </div>
   );

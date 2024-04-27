@@ -1,19 +1,8 @@
-// import { useEffect } from "react";
 import { useQuery } from "react-query";
 import getLocation from "../apis/apiGeolocation";
 import getTime from "../apis/apiWorldTime";
 
 function useTimeAndLocation() {
-  // const [ipData, setIpData] = useState(null);
-
-  // const {
-  //   data: locationData,
-  //   isLoading: isLocationLoading,
-  //   isError: isLocationError,
-  // } = useQuery("location", () => getLocation({ ip: ipData?.client_ip }), {
-  //   enabled: !!ipData,
-  // });
-
   const {
     data: locationData,
     isLoading: isLocationLoading,
@@ -25,12 +14,6 @@ function useTimeAndLocation() {
     isLoading: isTimeLoading,
     isError: isTimeError,
   } = useQuery("time", getTime);
-
-  // useEffect(() => {
-  //   if (timeData) {
-  //     setIpData(timeData);
-  //   }
-  // }, [timeData]);
 
   const isLoading = isLocationLoading || isTimeLoading;
   const isError = isLocationError || isTimeError;
