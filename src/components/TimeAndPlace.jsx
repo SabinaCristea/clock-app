@@ -11,14 +11,26 @@ function TimeAndPlace() {
   const city = timeAndLocation?.location?.city;
   const country = timeAndLocation?.location?.country;
 
-  console.log(timeAbbr);
+  console.log(time);
+
+  const [hours, minutes] = time.split(":");
+
+  let hourNumber = parseInt(hours, 10);
+
+  if (hourNumber === 24) {
+    hourNumber = 0;
+  }
+
+  const formattedHour = hourNumber.toString().padStart(2, "0");
+
+  const formattedTime = `${formattedHour}:${minutes}`;
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
   if (isError) {
-    return <p>Error fetching quote data</p>;
+    return <p>Error fetching data</p>;
   }
 
   return (
@@ -34,7 +46,7 @@ function TimeAndPlace() {
 
       <div className="flex items-end">
         <time className="text-[10rem] font-bold tracking-[-0.25rem] leading-[10rem] md:text-[17.5rem] md:tracking-[-0.437rem] md:leading-[17.5rem] lg:text-[20rem] lg:leading-[20rem] lg:tracking-[-0.5rem]">
-          {time}
+          {formattedTime}
         </time>
 
         <div className="text-[1.5rem] font-light leading-[2.8rem] uppercase pb-[0.5rem] pl-[0.5rem] md:text-[3.2rem] md:pb-[2.4rem] md:pl-[1.1rem] lg:text-[4rem] lg:pb-[2.7rem]">
