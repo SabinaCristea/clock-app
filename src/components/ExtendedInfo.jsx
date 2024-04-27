@@ -8,10 +8,18 @@ function ExtendedInfo({ className }) {
   const { image } = useGreetingIconImage();
   const timezone = timeAndLocation?.time?.timezone;
   const yearDay = timeAndLocation?.time?.yearDay;
-  const weekDay = timeAndLocation?.time?.weekDay;
+  let weekDay = timeAndLocation?.time?.weekDay;
   const weekNumber = timeAndLocation?.time?.weekNumber;
 
   const isDay = image === "day";
+
+  if (weekDay === 0) {
+    weekDay = 7;
+  } else {
+    weekDay--;
+  }
+
+  console.log(weekDay);
 
   if (isLoading) {
     return <p>Loading...</p>;
