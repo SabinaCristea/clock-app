@@ -1,15 +1,18 @@
 import useTime from "../hooks/useTime";
 import useTimeAndLocation from "../hooks/useIPLocation";
 import useGreetingIconImage from "../hooks/useGreetingIconImage";
+import React from "react";
 
-function TimeAndPlace() {
+const TimeAndPlace = React.memo(function TimeAndPlace() {
   const time = useTime();
   const { timeAndLocation, isLoading, isError } = useTimeAndLocation();
   const { greeting, icon } = useGreetingIconImage();
 
   const timeAbbr = timeAndLocation?.time?.abbr;
-  // const city = timeAndLocation?.location?.city;
-  // const country = timeAndLocation?.location?.country;
+  const city = timeAndLocation?.location?.city;
+  const country = timeAndLocation?.location?.country;
+
+  console.log(timeAbbr);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -40,11 +43,11 @@ function TimeAndPlace() {
         </div>
       </div>
       <div className="uppercase text-[1.5rem] tracking-[0.3rem] leading-[2.8rem] font-bold md:text-[1.8rem] md:tracking-[0.36rem] lg:text-[2.4rem] lg:tracking-[0.48rem]">
-        {/* In {city}, {country} */}
-        In city, country
+        In {city}, {country}
+        {/* In city, country */}
       </div>
     </div>
   );
-}
+});
 
 export default TimeAndPlace;

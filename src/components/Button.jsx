@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
+import React from "react";
 
-function Button({ onClick, arrowDirection, btnText }) {
+const Button = React.memo(function Button({
+  onClick,
+  arrowDirection,
+  btnText,
+}) {
   return (
     <button
       className="mb-[4rem] w-[11.85rem] md:mb-[6.4rem] md:w-[14.6rem] lg:mb-0"
@@ -19,7 +24,7 @@ function Button({ onClick, arrowDirection, btnText }) {
       </div>
     </button>
   );
-}
+});
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,

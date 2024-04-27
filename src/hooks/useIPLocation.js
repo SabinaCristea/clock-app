@@ -1,18 +1,18 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
-// import getLocation from "../apis/apiGeolocation";
+import getLocation from "../apis/apiGeolocation";
 import getTime from "../apis/apiWorldTime";
 
 function useTimeAndLocation() {
-  // const [ipData, setIpData] = useState(null);
+  const [ipData, setIpData] = useState(null);
 
-  // const {
-  //   data: locationData,
-  //   isLoading: isLocationLoading,
-  //   isError: isLocationError,
-  // } = useQuery("location", () => getLocation({ ip: ipData?.client_ip }), {
-  //   enabled: !!ipData,
-  // });
+  const {
+    data: locationData,
+    isLoading: isLocationLoading,
+    isError: isLocationError,
+  } = useQuery("location", () => getLocation({ ip: ipData?.client_ip }), {
+    enabled: !!ipData,
+  });
 
   const {
     data: timeData,
@@ -20,21 +20,18 @@ function useTimeAndLocation() {
     isError: isTimeError,
   } = useQuery("time", getTime);
 
-  // useEffect(() => {
-  //   if (timeData) {
-  //     setIpData(timeData);
-  //   }
-  // }, [timeData]);
+  useEffect(() => {
+    if (timeData) {
+      setIpData(timeData);
+    }
+  }, [timeData]);
 
-  // const isLoading = isLocationLoading || isTimeLoading;
-  // const isError = isLocationError || isTimeError;
-  const isLoading = isTimeLoading;
-  const isError = isTimeError;
+  const isLoading = isLocationLoading || isTimeLoading;
+  const isError = isLocationError || isTimeError;
 
   let timeAndLocation = null;
 
-  // if (timeData && locationData) {
-  if (timeData) {
+  if (timeData && locationData) {
     timeAndLocation = {
       time: {
         abbr: timeData.abbreviation,
@@ -43,10 +40,10 @@ function useTimeAndLocation() {
         timezone: timeData.timezone,
         weekNumber: timeData.week_number,
       },
-      // location: {
-      // city: locationData.data.location.city.name,
-      // country: locationData.data.location.country.name,
-      // },
+      location: {
+        city: locationData.regionName,
+        country: locationData.country,
+      },
     };
   }
 

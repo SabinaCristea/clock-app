@@ -1,6 +1,11 @@
 import PropTypes from "prop-types";
+import React from "react";
 
-function ExtendedInfoItem({ info, infoType, className }) {
+const ExtendedInfoItem = React.memo(function ExtendedInfoItem({
+  info,
+  infoType,
+  className,
+}) {
   return (
     <div
       className={`flex justify-between items-center md:flex-col md:items-start ${className} lg:gap-[0.9rem]`}
@@ -13,7 +18,7 @@ function ExtendedInfoItem({ info, infoType, className }) {
       </div>
     </div>
   );
-}
+});
 
 ExtendedInfoItem.propTypes = {
   info: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,

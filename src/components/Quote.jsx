@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import getRandomQuote from "../apis/apiQuotes";
 import { useQuery } from "react-query";
 
-function Quote() {
+const Quote = React.memo(function Quote() {
   const [quoteData, setQuoteData] = useState({
     content: "",
     author: "",
@@ -51,7 +51,7 @@ function Quote() {
         </p>
       </div>
       <button
-        className="refresh-quote-btn shrink-0"
+        className="refresh-quote-btn shrink-0 pt-[5px]"
         onClick={handleRefreshQuote}
       >
         <img
@@ -61,5 +61,5 @@ function Quote() {
       </button>
     </div>
   );
-}
+});
 export default Quote;
