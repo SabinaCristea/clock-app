@@ -15,8 +15,6 @@ function ExtendedInfo({ className }) {
 
   if (weekDay === 0) {
     weekDay = 7;
-  } else {
-    weekDay--;
   }
 
   console.log(weekDay);
